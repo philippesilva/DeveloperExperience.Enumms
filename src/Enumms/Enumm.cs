@@ -40,5 +40,19 @@ namespace Enumms
 
             throw new ArgumentException("Enumm - Not found.", nameof(description));
         }
+
+        public static Dictionary<int, string> ToDictionary<T>()
+        {
+            var values = Enum.GetValues(typeof(T));
+
+            var dictionary = new Dictionary<int, string>();
+
+            foreach (Enum item in values)
+            {
+                dictionary.Add(item.GetHashCode(), item.GetDescription());
+            }
+
+            return dictionary;
+        }
     }
 }

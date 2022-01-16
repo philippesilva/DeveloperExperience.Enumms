@@ -19,5 +19,13 @@ namespace Enumms.Tests
 
             Assert.AreEqual(Status.Success.GetHashCode(), status.GetHashCode());
         }
+
+        [Test]
+        public void ToDictionaryTest()
+        {
+            var dictionary = Enumm.ToDictionary<Status>();
+
+            Assert.NotNull(dictionary);
+        }
     }
 }
